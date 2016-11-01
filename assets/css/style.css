@@ -1,0 +1,70 @@
+/******************
+BODY
+******************/
+
+body {
+  background: #C2D9E6;
+}
+
+
+
+/******************
+HEADINGS
+******************/
+.jumbotron {
+  margin: 20px 0;
+  padding: 20px 10px;
+  border: 1px solid #000;
+  background: rgba(34, 116, 165, 0.6);
+  border-radius: 0px;
+}
+
+.subheading {
+  background-color: inherit;
+  margin: auto;
+  width: 100%;
+}
+
+
+/******************
+FONT
+******************/
+
+h1 {
+  color: #fff;
+  font-size: 2em;
+  text-align: left;
+  text-shadow: 2px 2px 5px #000;
+}
+
+p {
+  color: #000;
+}
+
+.btnHeadingBox {
+  padding: 2px 0 0 10px;
+  height: 30px;
+  width: 100%;
+  background-color: #13405A;
+  color: #EAF2F6;
+}
+
+.subBox {
+  padding: 0 10px;
+  height: 150px;
+  width: 96%;
+  margin: auto;
+  background-color: #EAF2F6;
+  border-radius: 10px;
+  border: 1px solid #000;
+}
+
+.gifBox {
+  padding: 0 10px;
+  height: 150px;
+  width: 96%;
+  margin: 20px auto;
+  background-color: #EAF2F6;
+  border-radius: 0px;
+  border: 1px solid #000;
+}

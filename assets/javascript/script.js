@@ -7,7 +7,7 @@ function displayTopic() {
 
     console.log(topic);
 
-    var queryURL = "http://api.giphy.com/v1/gifs/" + topic + "?api_key=dc6zaTOxFJmzC";
+    var queryURL = "http://api.giphy.com/v1/gifs/search?q=" + topic + "&api_key=dc6zaTOxFJmzC";
 
     $.ajax({url: queryURL, method: 'GET'}).done(function(response){
 
@@ -28,6 +28,10 @@ function displayTopic() {
           var gifImage = $('<img>');
 
           gifImage.attr('src', results[i].images.fixed_height.url);
+          gifImage.attr('data-still', results[i].images.original_still.url);
+          gifImage.attr('data-animate', results[i].images.original.url);
+          gifImage.attr('data-state', 'still');
+          gifImage.addClass('gif'); // Added a class
 
           gifDiv.append(p);
           gifDiv.append(gifImage);
@@ -41,7 +45,20 @@ function displayTopic() {
           //
           // $('#gifBox').append(gif);
         }
+
       }
+      $('.gif').on('click', function(){
+
+          var state = $(this).attr('data-state');
+
+          if (state == 'still') {
+            $(this).attr('src', $(this).data('animate'));
+            $(this).attr('data-state', 'animate');
+          } else {
+            $(this).attr('src', $(this).data('still'));
+            $(this).attr('data-state', 'still');
+          }
+      });
 
    }); // ends .done function
 
@@ -66,6 +83,7 @@ function renderButtons(){
 }
 
 
+
  	// ========================================================
 
  	// This function handles events where one button is clicked
@@ -83,9 +101,9 @@ function renderButtons(){
  		// We have this line so that users can hit "enter" instead of clicking on ht button and it won't move to the next page
  		return false;
 
- });
+  });
 
  // Generic function for displaying the movieInfo
- $(document).on('click', displayTopic);
+ $(document).on('click', '.addTopic', displayTopic);
 
 renderButtons();

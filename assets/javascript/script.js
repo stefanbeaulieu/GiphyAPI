@@ -7,7 +7,7 @@ function displayTopic() {
 
     console.log(topic);
 
-    var queryURL = "http://api.giphy.com/v1/gifs/search?q=" + topic + "&api_key=dc6zaTOxFJmzC";
+    var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + topic + "&api_key=dc6zaTOxFJmzC";
 
     $.ajax({url: queryURL, method: 'GET'}).done(function(response){
 

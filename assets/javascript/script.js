@@ -27,7 +27,7 @@ function displayTopic() {
 
           var gifImage = $('<img>');
 
-          gifImage.attr('src', results[i].images.fixed_height.url);
+          gifImage.attr('src', results[i].images.original_still.url);
           gifImage.attr('data-still', results[i].images.original_still.url);
           gifImage.attr('data-animate', results[i].images.original.url);
           gifImage.attr('data-state', 'still');
